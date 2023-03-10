@@ -6,7 +6,6 @@ const chave = randomBytes(32)//chave aleatoria, possui realmente 32 valores
 //cria buffer com 32 valores
 const vi = randomBytes(16)
 
-
 const cifra = createCipheriv('aes256', chave, vi)
 
 const mensagemCifrada = cifra.update(mensagem, 

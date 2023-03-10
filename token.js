@@ -9,7 +9,7 @@ const chaveSecreta = 'chaveSuperSecreta'
 const token = jwt.sign({
     apelido: "jm",
     curso: "segurança e node.js"
-}, chaveSecreta)
+}, chaveSecreta, {algorithm: 'HS256', expiresIn: 10})
 
 console.log(token)
 

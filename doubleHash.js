@@ -79,7 +79,19 @@ class Usuario{
     }
 }
 
+const sal = randomBytes(32).toString('hex')
+console.log(sal)
+const senha = '12345'
+const hash = scryptSync(senha, sal, 64)
+console.log(hash)
 //código omitido
+const senhaInserida = '123456'
+const hashNova = scryptSync(senhaInserida, sal, 64)
 
-const jm = new Usuario ('sergio', '123')
-jm.autentica('sergio', '123')
+// timingsafeequal so recebe buffer 
+const teste = timingSafeEqual(hash, hashNova)
+console.log(teste)
+
+
+// const jm = new Usuario ('sergio', '123')
+// jm.autentica('sergio', '123')
